@@ -1,5 +1,7 @@
 #include <err.h>
 #include <errno.h>
+#include <unistd.h>
+#include <stdlib.h>
 
 void xwrite(char* el){
     ssize_t output = write(1, el, 1);
@@ -12,9 +14,16 @@ void newline(){
     xwrite(&nl);
 }
 
-void echo(int argc, char* argv[]){
-    for (int i = 0; i < argc; i++)
-        for (; argv[i-argc] != '\0';)
-            xwrite(argv[i-argc]);
+void space(){
+    char sp = ' ';
+    xwrite(&sp);
+}
+
+void echo(int argc, char** argv){
+    for (; *argv != '\0'; argv++){
+        for (; **argv != '\0'; (*argv)++)
+            xwrite(*argv);
+        space();
+    }
     newline();
 }
