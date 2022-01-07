@@ -5,7 +5,7 @@
 
 #define MAX_LINE_LENGTH 80
 
-void head1(char *filename)
+void head(char *filename)
 {
     FILE *file = fopen(filename,"r");
     int i = 0;
