@@ -12,12 +12,15 @@ enum operation
     TOK_QUIT,
     TOK_AND,
     TOK_OU,
-    TOK_PAR
+    TOK_PAR_LEFT,
+    TOK_PAR_RIGHT,
+    TOK_VAL
 };
 
 struct node
 {
     enum operation token;
+    char* value;
 };
 
 struct *node node_new();
