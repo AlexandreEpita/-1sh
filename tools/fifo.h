@@ -13,4 +13,10 @@ struct fifo
 
 static struct fifo fifo_new(enum operation);
 
+struct fifo *fifo_add(struct fifo* fifo, struct node* node);
+
+struct node* fifo_peek(struct*fifo fifo);
+
+struct fifo* fifo_pop(struct fifo*fifo);
+
 #endif
